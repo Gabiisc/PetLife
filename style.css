@@ -1,0 +1,209 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+    font-family: 'montserrat', sans-serif;
+}
+
+body{
+    color: #263138;
+}
+
+header{
+    background-color: #ff9a6c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 80px;
+}
+
+header nav a{
+    color: #ffffff;
+    font-weight: 600;
+    padding: 32px;
+    text-decoration: none;
+}
+
+#inicio{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 80px 128px 80px;
+    position: relative;
+}
+
+h1, 
+h2{
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.paragrafo{
+    line-height: 150%;
+    margin-bottom: 32px;
+}
+
+.botao{
+    background-color: #ff725e;
+    padding: 16px 32px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.botao-transparente{
+    background-color: transparent;
+    color: #ff725e;
+    padding: 16px 32px;
+    /* mantem  sublinhado na palavra, mas defini a distância que ela ficará da mesma */
+    text-underline-offset: 4px; 
+}
+
+.absoluto{
+    /* Indica que o item irá sobressair todos as configurações e ficar no meio da tela (a tela inteira!! não respeita nem a div ou class) a menos que haja outras configurações junto a ele na classe, tal como abaixo */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Indica posição de profundidade, neste caso, jogou a imagem para trás dos demais itens */
+    z-index: -10;
+}
+
+
+/* Seção 2 */
+
+#clinica{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+#clinica li{
+    margin-bottom: 16px;
+    margin-left: 32px;
+}
+
+/* Seção 3 */
+
+#farmacia{
+    padding: 64px 80px;
+    text-align: center;
+
+}
+
+#farmacia img{
+    margin: 64px auto;
+}
+
+#farmacia 
+.paragrafo{
+    max-width: 950px;
+    /* Quando foi definido tamanho máximo do texto, ele foi jogado para direita (respeitando apenas as margens e paddins, foi necessário incluir um margim 0auto para centralizá-lo novamente */
+    margin: 0 auto;
+}
+
+/* Seção 4 */
+
+#duvidas{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+.duvida h3{
+    border: 2px solid #ff725e;
+    border-radius: 8px;
+    /* Alteração do cursor do mouse */
+    cursor: pointer;
+
+    padding: 24px;
+}
+
+/* esta classe foi utilizada para complementar o ".duvida img, pois indica que o position: absolute da class abaixo, irá funcionar DENTRO da position: relative desta class */
+
+.duvida{
+    position: relative;
+}
+
+.duvida img{
+    position: absolute;
+    top: 32px;
+    right: 24px;
+}
+
+.duvida 
+.paragrafo{
+    border-right: 1px solid #ff725e;
+    border-bottom:  1px solid #ff725e;
+    border-left:  1px solid #ff725e;
+    border-radius: 0px 0px 8px 8px;
+    /* Usado para alinhar a borda do parágrafo com a borda do título */
+    margin-top: -8px;
+    /* padding vertical de 0 para juntar os elementos */
+    padding: 0px 24px;
+    height: 0;
+    /* tornou o elemento transparente, foi usado para sumir uma linha do quadro de texto */
+    opacity: 0;
+    /* overflow=conteudo que ultrapassa os limites - hidden=se ultrapassa, não será mostrado */
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+/* classe criada para ser o oposto da classe de cima. A de cima deixa os conteudos fechados, a de baixo deixa eles abertos */
+
+.duvida.ativa 
+.paragrafo{
+    /* faz com que a altura se ajuste ao tamanho do conteudo */
+    height: fit-content;
+    opacity: 1;
+    padding: 24px;
+}
+
+footer{
+    /* o a do rgbA = alfa = transparência (é em %) */
+    background-color: rgba(255, 152, 108,0.25);
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 64px 80px;
+}
+
+footer img,
+footer .titulo{
+    /* Display:block utilizado por conta da tag strong, pois em seu padrão vem em Display:inline, o que não permite a utilização de margin */
+    display: block;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+footer p{
+    margin-bottom: 16px;
+    max-width: 350px
+
+}
+
+footer nav a{
+    color: #263138;
+    display: block;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+footer p a{
+    color: #263138;
+    text-decoration: none;
+}
+
+#copyright{
+    background-color: #263138;
+    padding: 24px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#copyright a{
+    color:#ff7523;
+}
